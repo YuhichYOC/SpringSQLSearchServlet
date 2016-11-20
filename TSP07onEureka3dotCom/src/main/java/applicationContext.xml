@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd" >
+	
+	<bean id="ResultBean" class="com.eureka3.test10.ResultBean" />
+	
+	<bean id="MySQLAccessor" class="com.eureka3.test10.MySQLAccessor" >
+		<property name="userId"><value>test</value></property>
+		<property name="password"><value>password</value></property>
+		<property name="dataSource"><value>test</value></property>
+	</bean>
+	
+	<bean id="Cast" class="com.eureka3.test10.Cast" scope="prototype" lazy-init="true" >
+	</bean>
+	
+	<bean id="OneRow" class="com.eureka3.test10.OneRow" scope="prototype" lazy-init="true" >
+		<property name="columnCount" value="2" />
+	</bean>
+	
+	<bean id="OneItem" class="com.eureka3.test10.OneItem" scope="prototype" lazy-init="true" >
+	</bean>
+	
+	<!-- <bean id="appProps" class="org.springframework.beans.factory.config.PropertiesFactoryBean" >
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<value>/app.properties</value>
+			</list>
+		</property>
+	</bean> -->
+	<!-- <context:property-placeholder properties-ref="appProps" /> -->
+	
+</beans>
